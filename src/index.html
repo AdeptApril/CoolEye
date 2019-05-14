@@ -3,12 +3,12 @@
 <html>
 <head>
 
-	<title>Choropleth Tutorial - Leaflet</title>
+	<title>CoolEye - Keeping an Eye on E. Coli</title>
 
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
 
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,9 +17,17 @@
 
 	<style>
 		html, body {
+          position: relative;
 			height: 100%;
 			margin: 0;
 		}
+        .logo {
+          height:6%;
+          position: absolute;
+          top: -94%; bottom:0; left: -75%; right:0;
+          margin: auto;
+          z-index: 5;
+        }
 		#map {
 			width: 600px;
 			height: 400px;
@@ -31,7 +39,7 @@
 .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
 </head>
 <body>
-
+    <img src="../images/bacteria_eye.png" class="logo" alt="CoolEye Bacteria Eye Logo"> <!-- This image could possibly be placed somewhere other than just "in the body"-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">CoolEye</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,7 +98,8 @@
 			'</b><br />Soil pH: ' + props.soilPH + '' +
 			'</b><br />Barometric pressure: ' + props.pressure + 'mbar' +
 			'</b><br />Soil moisture: ' + props.soilMoisture + '%' +
-			'</b><br />Relative Humidity: ' + props.relHumidity + '%'
+			'</b><br />Relative Humidity: ' + props.relHumidity + '%' +
+            '</b><br />Carbon Percentage Change From Yesterday: ' + props.carbon + '%'
 			: 'Hover over your farm land');
 	};
 
